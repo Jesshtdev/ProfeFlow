@@ -1,0 +1,9 @@
+{
+  "name": "profeflow",
+  "version": "2.1.0",
+  "private": true,
+  "description": "ProfeFlow - aplicación estática con sincronización privada",
+  "dependencies": {
+    "@supabase/supabase-js": "2.118.0"
+  }
+}
