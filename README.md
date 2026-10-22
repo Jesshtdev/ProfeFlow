@@ -19,7 +19,7 @@ El modo nube necesita internet para guardar. No hay cola de ediciones sin conexi
 
 Este repositorio contiene únicamente código y configuración pública. No contiene listas, respaldos, fotografías ni el horario personal del docente. El horario ya guardado se conserva en el respaldo o en la cuenta.
 
-Supabase guarda un documento privado por usuario. Las políticas RLS exigen que el propietario coincida con la sesión autenticada. Las fotos originales viven en un bucket privado, en rutas de su propietario. Las fotos antiguas se conservan para que los respaldos históricos sigan funcionando; no se purgan automáticamente al borrar un registro.
+Supabase guarda un documento privado por usuario. Las políticas RLS exigen que el propietario coincida con la sesión autenticada. Las fotos originales viven en la tabla privada `profeflow_photos`, protegidas por la misma cuenta. Se usa la base de datos para evitar depender del servicio de archivos durante su incidencia de aprovisionamiento. Las fotos antiguas se conservan para que los respaldos históricos sigan funcionando; no se purgan automáticamente al borrar un registro.
 
 `cloud-config.js` contiene solo la URL y la clave **publicable** del proyecto. Nunca agregues una clave `service_role`, contraseña de base de datos o token de GitHub.
 
@@ -27,4 +27,4 @@ Supabase guarda un documento privado por usuario. Las políticas RLS exigen que 
 
 GitHub Pages puede servir directamente la raíz de este repositorio, rama `main`. `.nojekyll` evita procesado adicional. Configura la URL pública como Site URL en Supabase → Authentication → URL Configuration para que los correos de confirmación vuelvan al sitio.
 
-Para otro proyecto Supabase, ejecuta `schema.sql` una sola vez en un proyecto nuevo y cambia `cloud-config.js`. Se necesitan Auth con correo y contraseña, tabla `profeflow_state`, función `profeflow_save` y bucket privado `profeflow-photos`.
+Para otro proyecto Supabase, ejecuta `schema.sql` una sola vez en un proyecto nuevo y cambia `cloud-config.js`. Se necesitan Auth con correo y contraseña, tabla `profeflow_state`, función `profeflow_save` y tabla privada `profeflow_photos`.

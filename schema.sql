@@ -26,7 +26,17 @@ begin
 end; $$;
 revoke all on function public.profeflow_save(bigint,jsonb) from public,anon;
 grant execute on function public.profeflow_save(bigint,jsonb) to authenticated;
-insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types) values ('profeflow-photos','profeflow-photos',false,15728640,array['image/jpeg','image/png','image/webp','image/heic','image/heif']);
-create policy profeflow_photo_read on storage.objects for select to authenticated using (bucket_id='profeflow-photos' and (storage.foldername(name))[1]=(select auth.uid())::text);
-create policy profeflow_photo_insert on storage.objects for insert to authenticated with check (bucket_id='profeflow-photos' and (storage.foldername(name))[1]=(select auth.uid())::text);
--- Files are immutable. Old photos remain private so older backups keep working.
+create table public.profeflow_photos (
+ user_id uuid not null references auth.users(id) on delete cascade,
+ id text not null check (id ~ '^[a-zA-Z0-9_-]+$'),
+ mime_type text not null check(mime_type in ('image/jpeg','image/png','image/webp','image/heic','image/heif')),
+ byte_size integer not null check(byte_size>0 and byte_size<=15728640),
+ data_base64 text not null check(length(data_base64)<=20971520 and length(data_base64)=4*((byte_size+2)/3) and data_base64 ~ '^[A-Za-z0-9+/]*={0,2}$'),
+ created_at timestamptz not null default now(),
+ primary key(user_id,id)
+);
+alter table public.profeflow_photos enable row level security;
+revoke all on public.profeflow_photos from anon;
+grant select,insert on public.profeflow_photos to authenticated;
+create policy profeflow_photo_owner_read on public.profeflow_photos for select to authenticated using ((select auth.uid())=user_id);
+create policy profeflow_photo_owner_insert on public.profeflow_photos for insert to authenticated with check ((select auth.uid())=user_id);
