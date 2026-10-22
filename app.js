@@ -1,2 +1,2 @@
 'use strict';
-boot().finally(()=>ProfeCloud.init());
+ProfeCloud.launch();

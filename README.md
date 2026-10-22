@@ -6,14 +6,14 @@ La aplicación funciona como página estática. No necesita compilación: `index
 
 ## Cuenta privada y sincronización
 
-1. Abre la aplicación y pulsa **Conectar mi cuenta**.
-2. Crea tu cuenta, confirma el correo e inicia sesión.
-3. En el equipo con tus registros, acepta subir el aula local completa. Si estás usando una URL nueva, primero importa tu respaldo completo desde **Datos y respaldos**: los datos del navegador no cambian de ubicación solos.
+1. Abre la aplicación: verás la pantalla **Inicia sesión** si no tienes una sesión vigente.
+2. Usa tu cuenta existente o elige **Crear cuenta**; confirma el correo e inicia sesión.
+3. Si la cuenta ya tiene un aula, se abre directamente. En una cuenta nueva se ofrece subir los datos locales de este navegador; también puedes importar un respaldo completo desde **Datos y respaldos** después de entrar.
 4. En otro equipo, abre la misma aplicación e inicia sesión con la misma cuenta. Si ya hay datos remotos, se abren sin reemplazarlos por los del equipo nuevo.
 
 Los guardados se envían al servidor antes de mostrarse como guardados. Los otros equipos consultan cambios cada 15 segundos cuando no hay edición pendiente ni formulario abierto. Una revisión antigua se rechaza mediante control de versión: no se mezclan automáticamente dos ediciones simultáneas. Ante un conflicto, conserva tus apuntes, usa **Mi cuenta · Nube → Actualizar desde la nube** y vuelve a aplicar el cambio.
 
-El modo nube necesita internet para guardar. No hay cola de ediciones sin conexión. Cerrar sesión vuelve al aula local conservada en ese navegador. Sigue exportando respaldos completos periódicamente.
+El modo nube necesita internet para guardar. No hay cola de ediciones sin conexión. El botón **Cerrar sesión**, arriba, vuelve a la pantalla de acceso sin borrar el aula de la cuenta. En la versión local descargada se conserva el acceso a su aula local. Sigue exportando respaldos completos periódicamente.
 
 ## Datos y privacidad
 
