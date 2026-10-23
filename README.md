@@ -28,3 +28,7 @@ Supabase guarda un documento privado por usuario. Las políticas RLS exigen que 
 GitHub Pages puede servir directamente la raíz de este repositorio, rama `main`. `.nojekyll` evita procesado adicional. Configura la URL pública como Site URL en Supabase → Authentication → URL Configuration para que los correos de confirmación vuelvan al sitio.
 
 Para otro proyecto Supabase, ejecuta `schema.sql` una sola vez en un proyecto nuevo y cambia `cloud-config.js`. Se necesitan Auth con correo y contraseña, tabla `profeflow_state`, función `profeflow_save` y tabla privada `profeflow_photos`.
+
+## Uso en celular
+
+La navegación está en **Menú**. El semestre y la búsqueda global, así como los filtros de cada pantalla, se despliegan al tocarlos. Las listas se presentan como tarjetas con etiquetas, los criterios de revisión en una columna y el horario por día. El libro de calificaciones conserva desplazamiento horizontal para comparar sus columnas. Formularios y ventanas se ajustan al alto disponible y los controles usan tamaños táctiles. No cambia los registros ni los cálculos.
