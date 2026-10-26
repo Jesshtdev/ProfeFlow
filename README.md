@@ -32,3 +32,9 @@ Para otro proyecto Supabase, ejecuta `schema.sql` una sola vez en un proyecto nu
 ## Uso en celular
 
 La navegación está en **Menú**. El semestre y la búsqueda global, así como los filtros de cada pantalla, se despliegan al tocarlos. Las listas se presentan como tarjetas con etiquetas, los criterios de revisión en una columna y el horario por día. El libro de calificaciones conserva desplazamiento horizontal para comparar sus columnas. Formularios y ventanas se ajustan al alto disponible y los controles usan tamaños táctiles. No cambia los registros ni los cálculos.
+
+## Exámenes por turnos
+
+En **Exámenes por turnos**, elige la materia y el grupo. Puedes importar un Excel con columnas por turno (fecha arriba y nombres debajo), o una tabla con Turno, Nombre, ID y Fecha; también puedes generar una distribución equilibrada al azar. Sin ID, se exige una coincidencia única del nombre completo, aun si los apellidos vienen primero. Revisa las coincidencias antes de guardar. Las bajas e inactivos solo se incluyen si lo eliges expresamente y conservan su estado.
+
+Cada turno permite editar fecha, hora y aula, buscar alumnos y marcar Presente, Falta o Justificada. El orden se conserva y la asistencia se guarda por separado: no cambia la asistencia diaria, las calificaciones ni el derecho a examen. Puedes exportar la lista a Excel y archivar o restaurar organizaciones. La cuenta y los respaldos incluyen estas listas.
