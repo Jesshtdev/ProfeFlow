@@ -33,3 +33,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - `students[].attendanceHistory` opcional conserva anterior/nuevo completos, origen y fecha ISO; registra también correcciones manuales. Reimportaciones idénticas no duplican cambios. Se preservan metadatos/observaciones del registro vigente.
 - Aprobadas cuatro pruebas focalizadas: historial/reimportaciones/preservación, padrón (altas/desapariciones/reincorporaciones), reglas de asistencia y turnos. Notas, entregas, justificantes y controles de examen por turnos permanecen intactos; historial persiste en respaldo/reapertura.
 - Solo rama local; sin cambios de SDK, configuración de nube, SQL ni servicios de producción.
+
+## Ajuste posterior: menú por carpetas
+- Seis carpetas acordeón con icono, título, indicador, subopciones con sangría y opción activa; se conservan las 18 rutas sin cambiar lógica de vistas. Se reutiliza PF_AREAS y el cierre móvil existente.
+- Preferencia de carpeta abierta/cerrada en localStorage; accesos rápidos revelan la carpeta correspondiente. Los botones de despliegue conservan su nodo/foco para no cerrar accidentalmente el menú móvil.
+- Pruebas focalizadas de navegación, persistencia y datos inmutables aprobadas; revisión visual de escritorio/móvil sin desbordamiento. Archivos de ejecución: navigation.js, theme.css e index.html (versión de caché). Sin push ni despliegue.
