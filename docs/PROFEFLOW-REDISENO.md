@@ -27,3 +27,9 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Compatibilidad: V1/V2, fotos de justificantes y calendario con respaldo/restauración, revisión de notas directas tras añadir criterios, 70/30, 25/25/50, redondeo y pendientes; asistencia oficial intacta por justificante. SDK, esquema SQL y configuración de producción sin cambios.
 - Límites de verificación: no se proporcionó el código de Apps Script ni una exportación real de su registro; se documentó y probó el contrato explícito, sin conectarse a Gmail. Confirmar fechas institucionales y correspondencias del archivo real antes de uso operativo. No se ha probado ni escrito contra producción.
 - Preparación: un paquete estático para una sola publicación futura, sin fixtures ni registros reales. Revisión/autorizar publicación es el siguiente paso; no existe automatización de push/despliegue.
+
+## Ajuste posterior: PowerCampus
+- Eliminada la opción de sobrescribir correcciones manuales: las marcas reconocidas actualizan siempre alumno/fecha. Vacíos y desconocidos no borran registros.
+- `students[].attendanceHistory` opcional conserva anterior/nuevo completos, origen y fecha ISO; registra también correcciones manuales. Reimportaciones idénticas no duplican cambios. Se preservan metadatos/observaciones del registro vigente.
+- Aprobadas cuatro pruebas focalizadas: historial/reimportaciones/preservación, padrón (altas/desapariciones/reincorporaciones), reglas de asistencia y turnos. Notas, entregas, justificantes y controles de examen por turnos permanecen intactos; historial persiste en respaldo/reapertura.
+- Solo rama local; sin cambios de SDK, configuración de nube, SQL ni servicios de producción.
