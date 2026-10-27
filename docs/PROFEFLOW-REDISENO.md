@@ -44,3 +44,4 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Verificados los 18 accesos, escritorio y móvil; pruebas folder-navigation y phase1 aprobadas, sin errores de consola. Trabajo local sin publicación.
 - Ajuste visual adicional: iconos distintos por sección principal y menor sangría para mostrar etiquetas completas; comprobado en escritorio y móvil, sin cambios de rutas.
 - Subopciones: 18 iconos según su función, manteniendo etiquetas, rutas y selección; prueba de navegación aprobada y comprobación visual local.
+- Calendario institucional: precarga editable S2-2026/S1-2027 desde imagen, 29–30 octubre y 2 noviembre sin clase. Calendarios existentes se conservan y se completan sin duplicados. Tras confirmar se excluyen suspensiones/vacaciones de asistencia y rachas, sin borrar marcas. Pruebas de calendario y asistencia aprobadas; solo local.
