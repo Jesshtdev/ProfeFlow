@@ -38,3 +38,9 @@ La navegación está en **Menú**. El semestre y la búsqueda global, así como 
 En **Exámenes por turnos**, elige la materia y el grupo. Puedes importar un Excel con columnas por turno (fecha arriba y nombres debajo), o una tabla con Turno, Nombre, ID y Fecha; también puedes generar una distribución equilibrada al azar. Sin ID, se exige una coincidencia única del nombre completo, aun si los apellidos vienen primero. Revisa las coincidencias antes de guardar. Las bajas e inactivos solo se incluyen si lo eliges expresamente y conservan su estado.
 
 Cada turno permite editar fecha, hora y aula, buscar alumnos y marcar Presente, Falta o Justificada. El orden se conserva y la asistencia se guarda por separado: no cambia la asistencia diaria, las calificaciones ni el derecho a examen. Puedes exportar la lista a Excel y archivar o restaurar organizaciones. La cuenta y los respaldos incluyen estas listas.
+
+## Desarrollo local del rediseño
+
+La rama `development/redesign` contiene las cinco fases verificadas; no se ha publicado. Ejecuta `npm test` (solo Node, sin instalar dependencias) para las pruebas aisladas y `npm run preview:test` para abrir `http://127.0.0.1:4417/` con seis alumnos ficticios. El servidor de pruebas sustituye la configuración de nube, escucha solo en loopback y bloquea conexiones externas con CSP. No lo uses para importar datos reales.
+
+La exportación Moodle requiere columnas reales previamente importadas, selección y confirmación. En Revisión → Entregas por correo puedes importar el registro de Apps Script, validar destinos y exportar el catálogo privado. Confirma el calendario institucional manualmente; las fechas propuestas no están aprobadas. Consulta `docs/PROFEFLOW-REDISENO.md` para el avance y el contrato de columnas. El paquete de publicación no incluye pruebas, fixtures ni datos personales. Publicarlo sigue requiriendo autorización explícita.

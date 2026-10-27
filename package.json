@@ -5,5 +5,9 @@
   "description": "ProfeFlow - aplicación estática con sincronización privada",
   "dependencies": {
     "@supabase/supabase-js": "2.118.0"
+  },
+  "scripts": {
+    "test": "node tests/run.cjs",
+    "preview:test": "node tests/preview-server.cjs"
   }
 }

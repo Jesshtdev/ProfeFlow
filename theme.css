@@ -119,3 +119,6 @@ body.auth-pending>aside,body.auth-pending>main{display:none!important}#authScree
 .email-records{display:grid;gap:12px}.email-records article{border:1px solid #dbe5f2;border-radius:10px;padding:14px;overflow-wrap:anywhere}.email-records strong{display:block;margin:8px 0}.email-records small{display:block;margin-bottom:10px}
 
 .semester-marks{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.semester-marks>div{padding:9px;background:#f3f7fc;border-radius:8px}.semester-marks strong{display:block}#physicalTable input{max-width:150px}#physicalError{color:#a22}
+@media(max-width:750px){#content .badge{display:inline-flex;align-items:center;white-space:normal;padding:7px 10px;font-size:11px}}
+
+.academic-events article{overflow-wrap:anywhere;min-width:0}.academic-events article>*{min-width:0;max-width:100%}
