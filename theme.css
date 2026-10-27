@@ -117,3 +117,5 @@ body.auth-pending>aside,body.auth-pending>main{display:none!important}#authScree
 .academic-events{display:grid;gap:9px}.academic-events article{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border:1px solid #dbe5f2;padding:12px;border-radius:9px}.calendar-day-list>div{padding:8px 0}.calendar-day-list small{display:block}@media(max-width:750px){.academic-events article{display:grid;grid-template-columns:1fr}.calendar-day-list .group-tag{display:inline-block}}
 
 .email-records{display:grid;gap:12px}.email-records article{border:1px solid #dbe5f2;border-radius:10px;padding:14px;overflow-wrap:anywhere}.email-records strong{display:block;margin:8px 0}.email-records small{display:block;margin-bottom:10px}
+
+.semester-marks{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.semester-marks>div{padding:9px;background:#f3f7fc;border-radius:8px}.semester-marks strong{display:block}#physicalTable input{max-width:150px}#physicalError{color:#a22}
