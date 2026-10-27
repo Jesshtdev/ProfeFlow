@@ -113,3 +113,5 @@ body.auth-pending>aside,body.auth-pending>main{display:none!important}#authScree
 }
 
 #sectionNav{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 16px}#sectionNav:empty{display:none}#sectionNav button{font-size:12px;padding:9px 12px}#sectionNav button.active{background:#e9f2ff;border-color:#93b9e9;color:#164d91}.admin-access{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0}@media(max-width:750px){#sectionNav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:7px}#sectionNav button{flex-shrink:0;min-height:44px}}
+
+.academic-events{display:grid;gap:9px}.academic-events article{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border:1px solid #dbe5f2;padding:12px;border-radius:9px}.calendar-day-list>div{padding:8px 0}.calendar-day-list small{display:block}@media(max-width:750px){.academic-events article{display:grid;grid-template-columns:1fr}.calendar-day-list .group-tag{display:inline-block}}

@@ -14,3 +14,4 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Base local guardada en 7057d9f. No se ha contactado producción.
 - Fase 1: en curso.
 - Fase 1 completada: seis áreas y subapartados; 15 rutas verificadas con fixture ficticio; JSON del aula idéntico antes/después de navegar. Cálculos intactos.
+- Fase 2 completada: calendario confirmado y semanas/eventos; sugerencia manual de parcial; horario por semestre, copia sin sobrescritura y PNG local; imagen original integrada en respaldo/restauración y transferencia. Pruebas de fechas, límites, aislamiento y fotos correctas. No se han confirmado fechas reales.
