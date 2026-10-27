@@ -1,0 +1,12 @@
+'use strict';
+const PF_AREAS=[
+ {id:'home',name:'Inicio',views:[['home','Resumen']]},
+ {id:'review',name:'Revisión',views:[['review','Revisar actividades']]},
+ {id:'grades',name:'Calificaciones',views:[['grades','Libro y parciales'],['examGroups','Exámenes por turnos']]},
+ {id:'attendance',name:'Asistencia y justificantes',views:[['attendance','Asistencia'],['justifications','Justificantes'],['eligibility','Derecho a examen'],['participation','Faltas consecutivas'],['activityAttendance','Cruzar con actividades']]},
+ {id:'planning',name:'Horario y calendario',views:[['planning','Horario personal']]},
+ {id:'admin',name:'Administración',views:[['admin','Accesos'],['manage','Semestres, materias y grupos'],['students','Alumnos'],['activities','Actividades y plantillas'],['data','Datos y respaldos']]}
+];
+function renderSectionNavigation(){const area=PF_AREAS.find(a=>a.views.some(([id])=>id===view));if(!area)return;document.querySelectorAll('#sidebarNav [data-view]').forEach(b=>{const active=b.dataset.view===area.id;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false')});$('sectionNav').innerHTML=area.views.length>1?area.views.map(([id,name])=>`<button data-section-view="${id}" aria-current="${id===view?'page':'false'}" ${id===view?'class="active"':''}>${esc(name)}</button>`).join(''):'';bindAll('[data-section-view]',b=>navigate(b.dataset.sectionView))}
+function renderAdmin(){$('content').innerHTML='<div class="card compact"><h2>Administración</h2><p>Catálogos, configuración e importaciones en sus módulos habituales.</p><div class="admin-access">'+PF_AREAS.find(a=>a.id==='admin').views.filter(([id])=>id!=='admin').map(([id,name])=>`<button data-section-view="${id}">${esc(name)}</button>`).join('')+'</div><div class="toolbar">'+button('Importar alumnos','roster')+button('Importar calificaciones','gradesImport')+button('Opciones generales','settings')+button('Evaluación de la materia','evaluation')+'</div></div>';bindAll('[data-section-view]',b=>navigate(b.dataset.sectionView))}
+function renderPlanning(){$('content').innerHTML=scheduleDashboard();bindSchedule()}
