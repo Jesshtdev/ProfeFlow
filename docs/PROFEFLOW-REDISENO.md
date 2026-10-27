@@ -38,3 +38,9 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Seis carpetas acordeón con icono, título, indicador, subopciones con sangría y opción activa; se conservan las 18 rutas sin cambiar lógica de vistas. Se reutiliza PF_AREAS y el cierre móvil existente.
 - Preferencia de carpeta abierta/cerrada en localStorage; accesos rápidos revelan la carpeta correspondiente. Los botones de despliegue conservan su nodo/foco para no cerrar accidentalmente el menú móvil.
 - Pruebas focalizadas de navegación, persistencia y datos inmutables aprobadas; revisión visual de escritorio/móvil sin desbordamiento. Archivos de ejecución: navigation.js, theme.css e index.html (versión de caché). Sin push ni despliegue.
+
+## Ajuste visual: subopciones
+- Solo CSS de subopciones: carpetas cerradas y abierta para la activa; encabezados y navegación intactos. Caché de theme actualizada.
+- Verificados los 18 accesos, escritorio y móvil; pruebas folder-navigation y phase1 aprobadas, sin errores de consola. Trabajo local sin publicación.
+- Ajuste visual adicional: iconos distintos por sección principal y menor sangría para mostrar etiquetas completas; comprobado en escritorio y móvil, sin cambios de rutas.
+- Subopciones: 18 iconos según su función, manteniendo etiquetas, rutas y selección; prueba de navegación aprobada y comprobación visual local.
