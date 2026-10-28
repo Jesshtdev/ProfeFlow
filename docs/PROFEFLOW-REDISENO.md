@@ -56,3 +56,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 ## Corrección: guardado rápido en exámenes por turnos
 - Marcas inmediatas agrupadas tras 300 ms, con un único guardado en curso y conservación de selecciones pendientes ante timeout. Reintento explícito recarga la revisión vigente antes de aplicar solo las marcas pendientes; no duplica el historial si el servidor ya confirmó el primer intento.
 - Se bloquea salir con marcas pendientes; se conserva la separación de asistencia oficial y turnos. Pruebas: pulsaciones rápidas, timeout real, respuesta perdida tras commit, historial sin duplicados y revisión integral con fixtures.
+
+## Asistencia: guardar al finalizar
+- Exámenes por turnos: eliminados temporizadores; P/F/J/SR solo cambian el borrador y Guardar asistencia confirma todo en una operación. Barra visible con pendientes, reintento seguro y protección al salir.
+- Asistencia oficial y cursos: conservan guardado final existente; controles compactos uniformes P/F/J/SR y botón explícito. Marcas oficiales continúan almacenándose como P/AI/AJ, sin mezclar turnos.
+- Pruebas de las tres capturas verifican que marcar no escribe datos hasta guardar, más timeout, historial e importaciones.
