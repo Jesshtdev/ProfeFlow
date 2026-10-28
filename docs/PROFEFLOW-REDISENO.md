@@ -67,3 +67,5 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Fase 2 verificada: referencia LIM anonimizada, 8 actividades, 14 alumnos, 7 diferencias; decisiones explícitas, reimportación sin duplicados ni asistencia histórica.
 - Fase 3 verificada: concentrado XLSX de nueve hojas funcionales, estilos de referencia y cálculos configurables; apertura independiente y previsualizaciones revisadas.
 - Revisión integral: 24 suites; respaldo y sincronización simulados. Sin push, despliegue ni acceso a producción. Detalles y pruebas en docs/EXAMENES-HISTORICOS-Y-XLSX.md.
+
+- Ajuste visual del encabezado de Cursos: metadatos compactos sin edición/descripción vacías ni salto forzado; pestañas y minimización conservadas. Verificado a 1440 y 390 px sin desbordamiento; prueba independent-courses y release-check aprobadas.
