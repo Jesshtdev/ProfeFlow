@@ -1,0 +1,18 @@
+const {run,assert,context,$,document}=require('./helper.cjs');
+(async()=>{await run('boot()');run('var cid=ev().categories.find(c=>c.kind==="exam").id');
+ assert.equal(run('examComponentsResult("mixed",examMakeComponents("mixed",18,22,17,17)).score'),85);
+ assert.equal(run('examComponentsResult("theory",examMakeComponents("theory",18,null,0,null)).score'),0);
+ assert.equal(run('examComponentsResult("mixed",examMakeComponents("mixed",18,22,0,"")).score'),null);
+ assert.equal(run('examMakeComponents("practice",null,22,null,11)[0].applicable'),false);
+ assert.throws(()=>run('examComponentsResult("mixed",examMakeComponents("mixed",18,22,19,22))'),/máximo/);
+ const untouched=run('JSON.stringify({reviews:db.reviews,students:db.students,submissions:db.submissions})');
+ run('saveComponentExams(db,group,period,cid,{mode:"mixed",theoryMax:18,practiceMax:22},[{studentId:"u0",expectedId:"",theory:17,practice:17},{studentId:"u1",expectedId:"",theory:0,practice:0},{studentId:"u2",expectedId:"",theory:10,practice:""}]);ix=Aula.index(db)');
+ assert.equal(run('db.exams.length'),3);assert.equal(run('db.exams[1].score'),0);assert.equal(run('db.exams[2].score'),null);assert(!run('Aula.summary(db,"u2",period,ix).ready'));
+ run('saveComponentExams(db,group,period,cid,{mode:"mixed",theoryMax:18,practiceMax:22},[{studentId:"u0",expectedId:db.exams[0].id,theory:18,practice:22}]);ix=Aula.index(db);Aula.validate(db)');assert.equal(run('db.exams.length'),4);assert.equal(run('db.exams[0].score'),85);assert.equal(run('ix.exams.get("u0|"+period+"|"+cid).score'),100);
+ assert.equal(run('JSON.stringify({reviews:db.reviews,students:db.students,submissions:db.submissions})'),untouched);assert.throws(()=>run('saveComponentExams(db,group,period,cid,{mode:"theory",theoryMax:20},[{studentId:"u0",expectedId:"",theory:10}])'),/cambió/);
+ run('var backup=Aula.migrate(Aula.clone(db))');assert.equal(run('backup.exams[2].score'),null);assert.throws(()=>run('var bad=Aula.clone(db);bad.exams[0].score=99;Aula.validate(bad)'),/componentes/);
+ run('navigate("physicalExams")');$('physicalTheoryMax').value='18';$('physicalPracticeMax').value='22';const input=document.querySelector('[data-exam-component="theory"][data-for-student="u0"]');input.value='10';input.oninput();assert(run('physicalExamDirty()'));context.confirm=()=>false;run('navigate("home")');assert.equal(run('view'),'physicalExams');context.confirm=()=>true;
+ const before=run('db.revision');await $('savePhysicalExams').onclick();assert.equal(run('db.revision'),before+1);assert($('physicalSaveState').textContent.includes('Grupo guardado'));assert(!run('physicalExamDirty()'));
+ run('db.subjects[0].evaluation.maxScale=10');assert.equal(run('Aula.displayScore(examComponentsResult("mixed",examMakeComponents("mixed",18,22,17,17)).score,ev())'),8.5);
+ console.log('PASS components: points 18+22, scale 10/100, real zero, pending/NA, history, legacy compatibility, atomic group save and dirty guard');
+})().catch(e=>{console.error(e);process.exitCode=1});

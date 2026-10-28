@@ -61,3 +61,9 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Exámenes por turnos: eliminados temporizadores; P/F/J/SR solo cambian el borrador y Guardar asistencia confirma todo en una operación. Barra visible con pendientes, reintento seguro y protección al salir.
 - Asistencia oficial y cursos: conservan guardado final existente; controles compactos uniformes P/F/J/SR y botón explícito. Marcas oficiales continúan almacenándose como P/AI/AJ, sin mezclar turnos.
 - Pruebas de las tres capturas verifican que marcar no escribe datos hasta guardar, más timeout, historial e importaciones.
+
+## Exámenes, históricos y XLSX — solo local
+- Fase 1 verificada: captura Teórico/Práctico/Mixto, componentes y máximos, cero/pendiente/N/A, guardado único y versiones compatibles.
+- Fase 2 verificada: referencia LIM anonimizada, 8 actividades, 14 alumnos, 7 diferencias; decisiones explícitas, reimportación sin duplicados ni asistencia histórica.
+- Fase 3 verificada: concentrado XLSX de nueve hojas funcionales, estilos de referencia y cálculos configurables; apertura independiente y previsualizaciones revisadas.
+- Revisión integral: 24 suites; respaldo y sincronización simulados. Sin push, despliegue ni acceso a producción. Detalles y pruebas en docs/EXAMENES-HISTORICOS-Y-XLSX.md.
