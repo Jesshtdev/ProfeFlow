@@ -52,3 +52,7 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Cuatro accesos a importadores compartidos, modo Moodle solo catálogo y auditoría de padrón. Las notas, justificantes y exámenes por turnos siguen en sus colecciones.
 - Cursos con ediciones, participantes, sesiones, observaciones e historiales, evaluaciones numéricas o cumplimiento, seis hojas Excel y acceso desde Inicio. Colección privada independiente y respaldo compatible sin SQL nuevo.
 - Pruebas focalizadas de ambos módulos y sincronización simulada aprobadas; revisión visual en escritorio y 390 px. El mensaje posterior de la docente autoriza el despliegue tras revisión final.
+
+## Corrección: guardado rápido en exámenes por turnos
+- Marcas inmediatas agrupadas tras 300 ms, con un único guardado en curso y conservación de selecciones pendientes ante timeout. Reintento explícito recarga la revisión vigente antes de aplicar solo las marcas pendientes; no duplica el historial si el servidor ya confirmó el primer intento.
+- Se bloquea salir con marcas pendientes; se conserva la separación de asistencia oficial y turnos. Pruebas: pulsaciones rápidas, timeout real, respuesta perdida tras commit, historial sin duplicados y revisión integral con fixtures.
