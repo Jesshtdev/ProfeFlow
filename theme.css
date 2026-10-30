@@ -187,3 +187,5 @@ body.auth-pending>aside,body.auth-pending>main{display:none!important}#authScree
 @media(max-width:750px){.exam-criteria-row{grid-template-columns:minmax(0,1fr) 100px;gap:8px}.exam-criteria-row>label:first-child{grid-column:1/-1}.exam-criteria-row .check{min-height:36px}.exam-criteria-row button{justify-self:end}.exam-save-bar{flex-wrap:wrap}.exam-save-bar span{flex:1 1 160px}.exam-save-bar button{flex:1 1 190px}#physicalTable [data-component-note]{min-height:36px}}
 
 .activity-summary-tags>.activity-review-status{font-weight:650;line-height:1.4}.activity-summary-tags>.activity-review-complete{background:#eaf6ee;color:#286544;border:1px solid #b9ddc5}.activity-summary-tags>.activity-review-pending{background:#fff5de;color:#8a641a;border:1px solid #edd9aa}
+
+.review-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.review-actions>button{min-height:44px;margin:0}@media(max-width:640px){.review-actions>button{flex:1 1 220px}}
