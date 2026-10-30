@@ -2,8 +2,8 @@
 const PF_AREAS=[
  {id:'home',name:'Inicio',views:[['home','Resumen']]},
  {id:'review',name:'Revisión',views:[['review','Revisar actividades'],['emailQueue','Entregas por correo']]},
- {id:'grades',name:'Calificaciones',views:[['grades','Libro y parciales'],['physicalExams','Exámenes físicos'],['semesterConcentrate','Concentrado semestral'],['examGroups','Exámenes por turnos']]},
- {id:'attendance',name:'Asistencia y justificantes',views:[['attendance','Asistencia'],['justifications','Justificantes'],['eligibility','Derecho a examen'],['participation','Faltas consecutivas'],['activityAttendance','Cruzar con actividades']]},
+ {id:'grades',name:'Calificaciones',views:[['grades','Libro y parciales'],['physicalExams','Exámenes físicos'],['semesterConcentrate','Concentrado semestral']]},
+ {id:'attendance',name:'Asistencia y justificantes',views:[['attendance','Asistencia'],['examGroups','Grupos'],['justifications','Justificantes'],['eligibility','Derecho a examen'],['participation','Faltas consecutivas'],['activityAttendance','Cruzar con actividades']]},
  {id:'planning',name:'Horario y calendario',views:[['planning','Horario personal']]},
  {id:'admin',name:'Administración',views:[['admin','Accesos'],['manage','Semestres, materias y grupos'],['students','Alumnos'],['imports','Importaciones'],['courses','Cursos y talleres'],['activities','Actividades y plantillas'],['data','Datos y respaldos']]}
 ];
