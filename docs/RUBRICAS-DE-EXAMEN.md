@@ -2,7 +2,7 @@
 
 ## Uso
 
-En Calificaciones → Exámenes físicos se mantienen Teórico, Práctico y Mixto para captura por puntos. Para combinar secciones, elige Secciones / criterios. Puedes añadir o quitar secciones sin exigir teoría o práctica.
+En Calificaciones → Exámenes físicos, las evaluaciones nuevas abren directamente Secciones del examen con una sola sección libre. Cada fila permite cambiar nombre, máximo y método, agregar o eliminar secciones y configurar su propio instrumento. Los formatos Teórico, Práctico y Mixto anteriores se conservan; Configurar secciones del examen los convierte a filas editables con sus máximos originales. No se exige teoría ni práctica.
 
 En cada fila pulsa Puntos / rúbrica / cotejo:
 
@@ -33,3 +33,13 @@ En la captura individual o por equipos, despliega Rúbrica/Lista de cotejo y sel
 - `node tests/test-cloud.cjs`: configuración y selección de cotejo viajan entre dos dispositivos simulados.
 - `node tests/run.cjs`, `node tests/browser-exam-projects.cjs`, `node tests/browser-team-reviews.cjs`: regresiones de captura, proyectos, equipos y aplicación general.
 - La comprobación pública usa los archivos publicados en un navegador efímero con datos ficticios y la nube interceptada; no modifica datos académicos reales.
+
+## Aclaración: pantalla de secciones dinámicas
+
+- La estructura se organiza en la pantalla principal del examen. No se creó otro módulo ni una segunda colección de instrumentos.
+- Guardar secciones (sin cambiar notas) utiliza el guardado existente de configuración con cero registros de notas; conserva las calificaciones y sus historiales, incluso al eliminar o renombrar secciones. La captura pendiente se descarta solo tras confirmación.
+- Cada sección nueva tiene precisión completa de puntos. Se suman todos los subtotales y máximos antes de la conversión final a 0–10 con un decimal. Las actividades mantienen el comportamiento anterior de Aula.rawScore; la nueva opción sin redondeo solo la utilizan estas secciones.
+- La precisión utilizada queda en la instantánea de cada rúbrica/cotejo. Las revisiones anteriores conservan su aritmética y no se recalculan al cargar o guardar la estructura.
+- Prueba de precisión: 0.04999996 + 0.09999996 sobre 2 puntos da 0.7/10. Redondear previamente los subtotales a seis decimales daría incorrectamente 0.8/10; el nuevo cálculo conserva los puntos originales.
+- `node tests/dynamic-exam-sections.cjs`: creación con una sección, agregar/renombrar/eliminar, métodos e instrumentos independientes, conversión de formato antiguo con máximos originales, guardado estructural sin recalificar, precisión e historial compatible y persistencia atómica.
+- `node tests/browser-dynamic-exam-sections.cjs`: interfaz nativa en escritorio, tableta y móvil; varias prácticas sin teoría, reducción a una rúbrica, captura, recarga y conservación exacta de notas anteriores.
