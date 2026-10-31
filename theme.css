@@ -210,3 +210,7 @@ body.auth-pending>aside,body.auth-pending>main{display:none!important}#authScree
 
 .project-individual:not([hidden]){display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;grid-column:1/-1}
 #examAssessmentTools{margin-bottom:16px}#examAssessmentTools:empty{display:none}
+
+.exam-section-evaluation{margin:8px 0;min-width:180px;max-width:340px}.exam-section-evaluation label{display:block;margin:9px 0;white-space:normal}.exam-section-evaluation select{width:100%;min-width:0}.exam-level-editor{border:1px solid #d4e1f5;border-radius:10px;padding:12px;margin:12px 0;min-width:0}.exam-level-editor .columns{align-items:end}.exam-section-input{min-width:0}
+
+@media(max-width:600px){.project-individual:not([hidden]) .exam-section-input{grid-column:1/-1}.exam-section-evaluation{min-width:0;max-width:none}}
