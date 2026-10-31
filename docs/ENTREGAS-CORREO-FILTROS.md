@@ -36,3 +36,7 @@ Implementado y probado en local, rama `development/redesign`. La docente autoriz
 - Comprobación Chrome en escritorio/móvil incluye cargar un CSV real con la opción marcada, confirmar el conteo y guardar conservando el estado pendiente.
 
 Se reutiliza `email-deliveries.js`; no se modificó la lógica de otros módulos ni el esquema CSV/Apps Script.
+
+## Ajuste visual de tarjetas (31/10/2026, solo local)
+
+Alumno y actividad separados; grupo/identificación y estado en encabezado compacto. Fecha del correo legible con hora de CDMX; vencimiento, retraso y máximo informativo agrupados, con tono visual según puntualidad. Notas/estado externo/adjuntos alineados junto a la acción. Adaptación a móvil sin desbordamiento. No cambian identificación, cálculo, validación ni datos guardados. Pruebas de bandeja, reemplazo y Chrome escritorio/móvil aprobadas.
