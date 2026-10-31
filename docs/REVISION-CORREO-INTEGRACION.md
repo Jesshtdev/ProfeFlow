@@ -2,7 +2,9 @@
 
 Implementación exclusivamente local en `development/redesign`. Sin push, despliegue ni cambios en Supabase o datos publicados.
 
-## Comportamiento
+> Actualización posterior del 31/10/2026: la regla de retraso ya produce una calificación persistida al validar y aplicar. Sustituye el comportamiento inicial sin nota automática descrito abajo. Consulta `CALIFICACION-CORREO-POR-RETRASO.md`.
+
+## Comportamiento inicial (referencia histórica)
 
 - Importar un mensaje institucional con alumno/actividad inequívocos conserva sus AlumnoID y ActividadID. La ficha muestra «Entrega por correo recibida — pendiente de validar», fecha real, vencimiento del catálogo, retraso y máximo informativo existente en America/Mexico_City. Importar o mostrar ese aviso no crea una entrega académica ni calificación.
 - Los mensajes ya importados se reconcilian al consultar la ficha, sin reimportación, duplicados, eliminación de historial ni escrituras académicas. La consulta selecciona siempre el par de IDs persistentes; los nombres/grupos por sí solos no identifican al alumno.
