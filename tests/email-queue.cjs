@@ -1,7 +1,7 @@
 const {run,assert,context,$,change,document,submit}=require('./helper.cjs');
 const plain=v=>JSON.parse(JSON.stringify(v));
 (async()=>{
- await run('boot()');run(`db.students[0].email='000001@escuela.test';db.students[1].email='000002@escuela.test';db.activities[0].code='P1';db.activities[0].dueAt='2026-10-01';var emailBase=Aula.clone(db);`);
+ await run('boot()');run("db.settings.schoolEmailDomain='escuela.test'");run(`db.students[0].email='000001@escuela.test';db.students[1].email='000002@escuela.test';db.activities[0].code='P1';db.activities[0].dueAt='2026-10-01';var emailBase=Aula.clone(db);`);
  // The original schedule is an informational ceiling, not the configurable grading rule.
  for(const [received,days,maximum] of [['2026-09-30',0,100],['2026-10-01',0,100],['2026-10-02',1,100],['2026-10-03',2,100],['2026-10-04',3,90],['2026-10-05',4,80],['2026-10-06',5,70],['2026-10-07',6,60],['2026-10-08',7,0],['2026-11-01',31,0]]){context.received=received;const p=run('emailPunctuality({receivedAt:received},db.activities[0])');assert.equal(p.days,days);assert.equal(p.maximum,maximum)}
  for(const [input,expected] of [['2026-10-04T05:59:59Z','2026-10-03'],['2026-10-04T06:00:00Z','2026-10-04'],['2026-10-04T00:00:00-06:00','2026-10-04'],['2026-10-04T08:00:00+02:00','2026-10-04'],['2026-10-04 23:59:59','2026-10-04'],['2026-10-04T00:00','2026-10-04'],['04/10/2026 10:25','2026-10-04'],['2024-02-29','2024-02-29'],['2026-02-29',''],['2026-02-30T00:00:00Z',''],['2026-10-01T25:00:00Z',''],['2026-10-01garbage',''],['fecha desconocida','']]){context.input=input;assert.equal(run('emailDate(input)'),expected,input)}
