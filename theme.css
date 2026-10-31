@@ -207,3 +207,6 @@ body.auth-pending>aside,body.auth-pending>main{display:none!important}#authScree
 .team-member-picker{display:grid;gap:6px;max-height:50vh;overflow:auto;padding:6px}.team-member-picker .check{padding:8px;background:#f5f8fd;border-radius:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.team-member-picker small{color:#617b9a}
 .team-criteria{display:grid;gap:8px}.team-exceptions{display:grid;gap:12px;margin:14px 0}.team-exceptions fieldset{min-width:0;border:1px solid #d4e1f5;border-radius:12px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.team-exceptions legend{font-weight:650;padding:0 6px;overflow-wrap:anywhere}.team-exceptions label{margin:0}.team-exceptions input,.team-exceptions select{width:100%;min-width:0}.team-exceptions fieldset label:last-child{grid-column:1/-1}
 @media(max-width:600px){.team-exceptions fieldset{grid-template-columns:1fr}.team-toolbar button{flex:1 1 auto}.team-card{padding:14px}}
+
+.project-individual:not([hidden]){display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;grid-column:1/-1}
+#examAssessmentTools{margin-bottom:16px}#examAssessmentTools:empty{display:none}
