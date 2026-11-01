@@ -11,3 +11,9 @@
 - El diálogo agrupa por división actual, con conteo y paneles nativos plegables. «Sin asignar» aparece al final solo cuando tiene alumnos. Cada grupo ordena nombres con `Intl.Collator('es')`, incluidos acentos y Ñ; la matrícula se muestra en una línea independiente.
 - Los selectores permanecen en el mismo DOM al plegar/expandir: conservan cambios pendientes y confirmaciones. Ordenar es exclusivamente visual; no escribe asignaciones ni registros académicos.
 - `exam-member-list.cjs` verifica agrupación, conteos, orden español, grupos vacíos y ausencia de escrituras; la regresión de navegador verifica selección/conteos visibles y plegado en escritorio y celular, manteniendo el flujo anterior.
+
+## Corrección de Sin asignar
+
+- Se omiten operaciones sin cambios antes de validar pertenencia, conservando los controles de duplicados, destinos y conflictos. Una operación real con ficha de otro grupo oficial informa nombre, matrícula, ID y grupo en conflicto.
+- Los integrantes históricos incorporados al diálogo conservan su AlumnoID: se normaliza `member.studentId` como `id` y se usa la clave del mapa al presentar la lista. No se cambia ninguna matrícula ni se identifica por nombre.
+- `exam-member-unassigned.cjs` y `browser-exam-member-unassigned.cjs` cubren varias retiradas simultáneas, movimientos mixtos, no asignados sin cambios, integrantes inactivos o antiguos, errores sin pérdida de selecciones, vista previa/guardado, respaldo y conservación de notas y asistencia original. Pruebas ficticias en escritorio/celular.
