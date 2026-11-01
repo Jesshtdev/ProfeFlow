@@ -43,3 +43,14 @@ En la captura individual o por equipos, despliega Rúbrica/Lista de cotejo y sel
 - Prueba de precisión: 0.04999996 + 0.09999996 sobre 2 puntos da 0.7/10. Redondear previamente los subtotales a seis decimales daría incorrectamente 0.8/10; el nuevo cálculo conserva los puntos originales.
 - `node tests/dynamic-exam-sections.cjs`: creación con una sección, agregar/renombrar/eliminar, métodos e instrumentos independientes, conversión de formato antiguo con máximos originales, guardado estructural sin recalificar, precisión e historial compatible y persistencia atómica.
 - `node tests/browser-dynamic-exam-sections.cjs`: interfaz nativa en escritorio, tableta y móvil; varias prácticas sin teoría, reducción a una rúbrica, captura, recarga y conservación exacta de notas anteriores.
+
+## Rúbrica descriptiva en matriz
+
+- El importador admite Criterio y columnas de niveles con puntuaciones decimales dentro del texto, sin exigir Máximo/Puntos. Si no hay máximo, utiliza el mayor nivel de cada criterio. Conserva las tablas numéricas y los formatos anteriores.
+- Cada nivel conserva la descripción completa original en `levels[].description`; criterio, máximo y celda (nombre, puntos, descripción) se editan en una matriz. Se reutiliza el constructor existente mediante una actualización de criterio por ID, sin otro catálogo ni otro motor de calificación.
+- La calificación muestra la misma matriz con radios: un nivel por criterio, o ninguna selección para dejarlo pendiente. Las selecciones siguen usando los IDs existentes. El cotejo conserva sus controles y cálculo.
+- Las matrices mantienen encabezados y filas en escritorio/móvil; sus contenedores permiten desplazamiento horizontal y se excluyen únicamente de la conversión visual de tablas a tarjetas.
+- Verificado con el archivo proporcionado `P2 -TI_vA.docx`: tabla con ocho criterios, cuatro niveles y máximos 5,3,3,3,2,1,1,2 (total 20), incluidos 1.5, 0.75 y 0.25. Se comprobó el texto completo de las 32 celdas.
+- `tests/exam-rubric-matrix.cjs` y `tests/browser-exam-rubric-matrix.cjs`: DOCX real y XLSX, edición/confirmación, copia independiente, pendiente/cambio de nivel, persistencia/recarga y conservación de la teoría de 30 aciertos y de notas anteriores. La huella SHA-256 del DOCX no cambia.
+- `tests/fixtures/ti-p2-rubric-matrix.json` contiene solo la tabla de rúbrica, para repetir las regresiones sin distribuir el examen ni sus preguntas.
+- Publicación autorizada posteriormente por la docente. Las verificaciones usan datos ficticios; no se escriben datos académicos de producción.

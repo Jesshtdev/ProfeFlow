@@ -1,0 +1,86 @@
+{
+  "source": "P2 -TI_vA.docx",
+  "tableIndex": 1,
+  "maxima": [
+    5,
+    3,
+    3,
+    3,
+    2,
+    1,
+    1,
+    2
+  ],
+  "rows": [
+    [
+      "Criterio",
+      "Excelente",
+      "Satisfactorio",
+      "En proceso",
+      "Insuficiente"
+    ],
+    [
+      "Selección y síntesis de la información ",
+      "5 pts. Selecciona las ideas esenciales y las transforma en frases breves, palabras clave y contenido adecuado para una presentación. No copia párrafos completos.",
+      "4 pts. La mayor parte de la información está sintetizada, aunque conserva algunos fragmentos extensos o información secundaria.",
+      "2 pts. Presenta varias secciones con exceso de texto o elimina información necesaria para comprender el tema.",
+      "0 pts. Predomina la copia directa del texto o la información no permite comprender el tema."
+    ],
+    [
+      "Organización y secuencia ",
+      "3 pts. Presenta las 8 diapositivas y cumple correctamente la estructura solicitada: portada, introducción, desarrollo, evento y cierre. Las ideas siguen una secuencia lógica.",
+      "2 pts. Cumple la estructura general, aunque presenta una dificultad menor en la distribución o secuencia de la información.",
+      "1 pt. Falta alguna parte de la estructura o varias ideas están ubicadas de manera poco clara.",
+      "0 pts. La presentación está incompleta o no respeta la organización solicitada."
+    ],
+    [
+      "Jerarquía visual y legibilidad ",
+      "3 pts. Títulos, subtítulos y contenido se distinguen claramente; existe buen contraste y la información se lee con facilidad.",
+      "2 pts. La jerarquía y legibilidad son adecuadas, con algunos problemas menores.",
+      "1 pt. Varias diapositivas presentan poca jerarquía, saturación o dificultades de lectura.",
+      "0 pts. La información resulta difícil de leer o no existe jerarquía visual."
+    ],
+    [
+      "Consistencia del diseño ",
+      "3 pts. Mantiene una línea visual coherente en colores, tipografías, estilos y distribución durante toda la presentación.",
+      "2 pts. El diseño es mayormente consistente, aunque presenta algunas variaciones menores.",
+      "1 pt. Existen cambios frecuentes que afectan la unidad visual de la presentación.",
+      "0 pts. Las diapositivas presentan estilos diferentes sin una relación visual clara."
+    ],
+    [
+      "Uso de recursos visuales ",
+      "2 pts. Al menos 5 diapositivas integran recursos proporcionados que apoyan claramente la información y están bien distribuidos.",
+      "1.5 pts. Cumple la cantidad solicitada, aunque uno o más recursos aportan poco al contenido o podrían estar mejor distribuidos.",
+      "1 pt. Utiliza recursos pertinentes en menos de 5 diapositivas o varios funcionan únicamente como decoración.",
+      "0 pts. Prácticamente no utiliza los recursos proporcionados o estos no se relacionan con el contenido."
+    ],
+    [
+      "Uso de tipografía ",
+      "1 pt. Utiliza máximo dos familias tipográficas y mantiene tamaños adecuados para títulos, subtítulos y texto.",
+      "0.75 pts. Presenta una variación menor respecto a las especificaciones sin afectar la lectura.",
+      "0.5 pts. Presenta varias inconsistencias de tipografía o tamaños.",
+      "0 pts. El uso de tipografías y tamaños dificulta claramente la lectura."
+    ],
+    [
+      "Transiciones  ",
+      "1 pt. Aplica al menos una transición y la utiliza de manera moderada y coherente en la presentación.",
+      "0.5 pts. Utiliza transiciones, pero presenta algunas inconsistencias o efectos innecesarios.",
+      "0.25 pts. Las transiciones son excesivas o poco coherentes.",
+      "0 pts. No aplica transiciones."
+    ],
+    [
+      "Archivo y entrega ",
+      "2 pts. Entrega los archivos PPTX, PPSX y PDF, todos funcionan correctamente y utilizan el nombre solicitado P2Examen_Iniciales.",
+      "1.5 pts. Entrega los tres formatos, pero existe un error menor en el nombre o alguno presenta un detalle de formato.",
+      "1 pt. Falta uno de los formatos solicitados o existen varios errores en la entrega.",
+      "0 pts. Faltan dos o más formatos, los archivos no abren o no corresponden al trabajo solicitado."
+    ],
+    [
+      "TOTAL",
+      "",
+      "",
+      "",
+      "____ / 20"
+    ]
+  ]
+}
