@@ -1,0 +1,12 @@
+const {run,assert,context}=require('./helper.cjs');
+const sample=require('fs').readFileSync('tests/fixtures/exam-key-layout.txt','utf8');
+(async()=>{await run('boot()');context.keyLayoutSample=sample;
+ const parts=JSON.parse(JSON.stringify(run('examKeyParts(keyLayoutSample)')));assert.equal(parts[0].versionId,'A');assert(parts[0].title.includes('(18 aciertos)'));assert.deepEqual(parts[0].blocks.filter(b=>b.type==='answers').map(b=>b.answers.map(a=>a.number)),[['1','2'],['3','4','7']]);assert.equal(parts[0].blocks.filter(b=>b.type==='sheet').length,1);
+ const b=parts.find(p=>p.version&&p.versionId==='B');assert.deepEqual(b.blocks.filter(b=>b.type==='answers').map(b=>b.answers.map(a=>a.number)),[['1'],['2','3'],['7','42']]);assert.equal(b.blocks.filter(b=>b.type==='sheet').length,2);assert.equal(parts[1].versionId,'A');assert.equal(parts.at(-1).versionId,'');assert(parts[1].blocks[0].text.includes('=SUMA(A1:A3)'));
+ const html=run('examKeyHTML(keyLayoutSample)');assert(!html.includes('=====')&&!html.includes('_____')&&!html.includes('-----'));assert(html.includes('Cambio de hoja'));assert(html.includes('&lt; 20'));assert(html.includes('data-key-version="A"')&&html.includes('data-key-version="B"'));assert(html.indexOf('data-key-version="B"')<html.indexOf('DATOS DE COMPROBACIÓN'));
+ assert.equal(run('examKeyAnswerLine("1-Automatización")'),null);assert.equal(run('examKeyAnswerLine("1-C y respuesta dudosa")'),null);assert.equal(run('examKeyAnswerLine("1-C / 2-A")'),null);
+ const raw='Texto sin estructura\n=====\nExplicación intacta.';context.keyLayoutRaw=raw;assert.equal(run('examKeyParts(keyLayoutRaw)[0].blocks[0].text'),raw);assert.equal(run('examKeyParts("Versión A\\n1-C\\n1-A")[0].blocks[0].type'),'text');
+ await run("mutate(d=>saveExamKey(d,group,period,ev().categories.find(c=>c.kind==='exam').id,keyLayoutSample,0))");const before=run('JSON.stringify(db)');run('examKeyHTML(keyLayoutSample);examKeyParts(keyLayoutSample)');assert.equal(run('JSON.stringify(db)'),before);assert.equal(run("examKeyRecord(db,group,period,ev().categories.find(c=>c.kind==='exam').id).text"),sample);assert.equal(run("examKeyRecord(db,group,period,ev().categories.find(c=>c.kind==='exam').id).revision"),1);
+ console.log('PASS key layout: rich A/B headers, variable pairs and order, independent sheet boundaries, general dividers, explanatory/practical/common blocks, ambiguous/raw fallback and unchanged stored TXT');
+})().catch(e=>{console.error(e);process.exitCode=1});
+module.exports={sample};

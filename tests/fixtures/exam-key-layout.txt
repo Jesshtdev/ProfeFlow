@@ -1,0 +1,23 @@
+=====
+VERSIÓN A – TEORÍA (18 aciertos)
+Explicación de la hoja inicial.
+1-C
+
+2-A
+_____
+3-B 4-D
+7-C
+-----
+PARTE II — PRÁCTICA
+Guardar como .xlsx.
+1. Escribir la fórmula =SUMA(A1:A3).
+VERSIÓN B - TEORÍA (cantidad variable)
+1-A
+_____
+2-C
+3-D
+_____
+7-B; 42-A
+DATOS DE COMPROBACIÓN — AMBAS VERSIONES
+Resultado esperado: 12.5 < 20.
+=====
