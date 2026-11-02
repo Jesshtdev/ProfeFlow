@@ -1,0 +1,7 @@
+# Cotejo manual y versiones de examen
+
+En «Configurar instrumento», una lista de cotejo permite elegir captura binaria o puntos manuales. La modalidad predeterminada de los cotejos anteriores continúa siendo binaria. La modalidad manual conserva puntos decimales por criterio, valida su máximo y deja vacíos pendientes. El diálogo suma la captura parcial; el resultado oficial permanece pendiente hasta completar las secciones. Los registros guardados conservan su modalidad e historial. Cambiar la configuración no reevalúa calificaciones anteriores.
+
+A/B/— son metadatos independientes de la nota, NP y las divisiones. Se guardan con «Guardar examen del grupo», incluso sin puntos capturados. Los cambios exclusivamente de versión no agregan registros de calificación. El filtro por versión se combina con la distribución seleccionada y ofrece agrupación alfabética por versión. Los filtros protegen los cambios pendientes mediante el mecanismo existente de guardar/descartar/cancelar. «Clave» consulta el contexto actual y destaca la versión seleccionada sin calificar.
+
+Pruebas ficticias: `exam-checklist-versions.cjs` y `browser-exam-checklist-versions.cjs` verifican 14 puntos en cuatro criterios, decimales/cero/vacíos/rango, cotejo binario, borradores, recarga, historial, A/B sin nota, filtros combinados, NP y notas ocultas. Se mantienen las pruebas existentes de secciones, equipos, claves y la suite aislada.

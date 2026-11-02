@@ -1,7 +1,7 @@
 const {run,assert,$,document,context,memory,submit}=require('./helper.cjs');
 (async()=>{
  await run('boot()');run(`view='physicalExams';renderPhysicalExams();var divisionCid=ev().categories.find(c=>c.kind==='exam').id,divisionBase=Aula.clone(db);`);
- assert($('physicalDivisionFilter').hidden);
+ assert(!$('physicalDivisionFilter').hidden);assert(!document.querySelector('#physicalPlanChoice'));
  run(`var divisionDraft=examRandomDraft(group,2);divisionDraft.slots[0].name='Grupo A';divisionDraft.slots[1].name='Grupo B';divisionDraft.rows=['u0','u1','u2','u3','u4'].map((id,i)=>({studentId:id,slotKey:divisionDraft.slots[i<2?0:1].key}));var firstPlan=buildExamPlan(divisionDraft,group,'TI · Segundo parcial','random');firstPlan.createdAt='2030-01-02';var secondPlan=Aula.clone(firstPlan);secondPlan.id='second-distribution';secondPlan.title='Otra distribución';secondPlan.createdAt='2030-01-01';secondPlan.slots[0].name='Grupo 1';secondPlan.slots[1].name='Grupo 2';secondPlan.slots[0].members=[Aula.clone(firstPlan.slots[1].members[0])];secondPlan.slots[1].members=[Aula.clone(firstPlan.slots[0].members[0])];db.examPlans=[firstPlan,secondPlan];saveComponentExams(db,group,period,divisionCid,{mode:'mixed',theoryMax:18,practiceMax:12,gradeScale10:true},[{studentId:'u2',expectedId:'',theory:12,practice:9,notes:'Nota de Grupo B'},{studentId:'u3',expectedId:'',theory:0,practice:'',notes:'Pendiente de Grupo B'}]);ix=Aula.index(db);renderPhysicalExams();var divisionUnchanged=JSON.stringify(db);`);
  memory.set('aula-docente-v2',run('JSON.stringify(db)'));
  const visible=()=>[...$('physicalTable').querySelectorAll('[data-exam-student-row]')].filter(el=>!el.hidden).map(el=>el.dataset.examStudentRow);
