@@ -69,3 +69,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Revisión integral: 24 suites; respaldo y sincronización simulados. Sin push, despliegue ni acceso a producción. Detalles y pruebas en docs/EXAMENES-HISTORICOS-Y-XLSX.md.
 
 - Ajuste visual del encabezado de Cursos: metadatos compactos sin edición/descripción vacías ni salto forzado; pestañas y minimización conservadas. Verificado a 1440 y 390 px sin desbordamiento; prueba independent-courses y release-check aprobadas.
+
+## Captura de exámenes: agrupación y orden (2026-11-02)
+- Grupos plegables por división o versión, cantidades, expandir/minimizar todos y categorías sin asignar/sin versión. Solo estado visual en memoria: se conservan las mismas filas, borradores y guardado por alumno.
+- Un único selector de orden ampliado a apellido estructurado, nombre y matrícula; orden español dentro de cada grupo. Sin inferir apellidos de nombres completos ni escribir preferencias en datos académicos.
+- Pruebas focalizadas con fixtures: orden, plegado independiente, capturas pendientes, guardado de filas contraídas, recarga, filtros combinados, NP, instrumentos, equipos y notas ajenas preservadas; escritorio/móvil.
