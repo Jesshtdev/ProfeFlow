@@ -74,3 +74,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Grupos plegables por división o versión, cantidades, expandir/minimizar todos y categorías sin asignar/sin versión. Solo estado visual en memoria: se conservan las mismas filas, borradores y guardado por alumno.
 - Un único selector de orden ampliado a apellido estructurado, nombre y matrícula; orden español dentro de cada grupo. Sin inferir apellidos de nombres completos ni escribir preferencias en datos académicos.
 - Pruebas focalizadas con fixtures: orden, plegado independiente, capturas pendientes, guardado de filas contraídas, recarga, filtros combinados, NP, instrumentos, equipos y notas ajenas preservadas; escritorio/móvil.
+
+## Captura directa desde la tabla de exámenes (2026-11-02)
+- Reutilizado el marcador y snapshot de evaluación directa para rúbricas y ambos cotejos; total explícito sin selecciones inventadas. Campos principales editables con rango 0–máximo; vacío pendiente y cero real.
+- Confirmación al sustituir criterios, modalidad directa/detallada en el instrumento y conservación al abrir/cerrar. Guardado grupal, borradores, historial, notas, NP y versiones reutilizados sin cambios en ponderaciones o fórmulas.
+- Pruebas focalizadas de modelo y navegador: decimales/rangos, sustitución/cancelación, recuperación de borradores, recarga, historial, observaciones, NP, filtros/grupos y alumnos ajenos intactos.

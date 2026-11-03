@@ -28,7 +28,16 @@ function examCaptureInstrument(section,scope,selections){
 function bindExamCaptureInstruments(root,config,onChange){
  root.querySelectorAll('[data-exam-instrument]').forEach(button=>{
   const scope=button.dataset.sectionScope,key=button.dataset.examInstrument,section=config.criteria.find(c=>c.key===key),field=[...root.querySelectorAll('[data-exam-instrument-draft]')].find(el=>el.dataset.sectionScope===scope&&el.dataset.examInstrumentDraft===key),points=[...root.querySelectorAll('[data-section-points]')].find(el=>el.dataset.sectionScope===scope&&el.dataset.sectionPoints===key);
-  points.readOnly=true;points.setAttribute('readonly','');
+  points.readOnly=false;points.title='Captura directa de puntos; utiliza Calificar / Editar para evaluar por criterios.';
+  points.oninput=()=>{
+   const previous=JSON.parse(field.value||'{}');
+   if(!examSectionDirect(previous)&&Object.keys(previous).length){
+    const oldScore=examSectionScore(section,previous);
+    if(points.value===(oldScore===null?'':examCapturePointText(oldScore)))return;
+    if(!confirm('¿Sustituir la evaluación por criterios de esta sección por una captura directa? La evaluación guardada se conserva en el historial.')){points.value=oldScore===null?'':examCapturePointText(oldScore);return}
+   }
+   field.value=JSON.stringify({$capture:'direct',$points:points.value});button.textContent='Editar';onChange(scope);
+  };
   button.onclick=()=>{
    const person=typeof db!=='undefined'?db.students.find(s=>s.id===scope):null;
    dialog('Calificar · '+section.name,'<div class="exam-instrument-dialog"><p class="exam-instrument-context">'+esc(person?.name||'')+' · Máximo '+esc(section.max)+' puntos</p><p class="muted">Los cambios se conservan en el borrador. Utiliza «Guardar examen del grupo» para guardarlos.</p>'+examSectionControls(section,scope,JSON.parse(field.value||'{}'))+'<div class="exam-instrument-total">Puntos obtenidos: <input readonly data-section-points="'+esc(key)+'" data-section-scope="'+esc(scope)+'" aria-label="Puntos del instrumento"><span>/ '+esc(section.max)+'</span>'+(examChecklistManual(section)?'<small data-section-progress="'+esc(key)+'" data-section-scope="'+esc(scope)+'"></small>':'')+'</div></div>',()=>true,'Listo');
