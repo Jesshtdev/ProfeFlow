@@ -26,6 +26,7 @@ function examCaptureInstrument(section,scope,selections){
  return '<input type="hidden" data-exam-instrument-draft="'+esc(section.key)+'" data-section-scope="'+esc(scope)+'" value="'+esc(JSON.stringify(selections))+'"><button type="button" class="exam-instrument-action" data-exam-instrument="'+esc(section.key)+'" data-section-scope="'+esc(scope)+'">'+(Object.keys(selections).length?'Editar':'Calificar')+'</button>';
 }
 function bindExamCaptureInstruments(root,config,onChange){
+ bindExamDecimalInputs(root);
  root.querySelectorAll('[data-exam-instrument]').forEach(button=>{
   const scope=button.dataset.sectionScope,key=button.dataset.examInstrument,section=config.criteria.find(c=>c.key===key),field=[...root.querySelectorAll('[data-exam-instrument-draft]')].find(el=>el.dataset.sectionScope===scope&&el.dataset.examInstrumentDraft===key),points=[...root.querySelectorAll('[data-section-points]')].find(el=>el.dataset.sectionScope===scope&&el.dataset.sectionPoints===key);
   points.readOnly=false;points.title='Captura directa de puntos; utiliza Calificar / Editar para evaluar por criterios.';

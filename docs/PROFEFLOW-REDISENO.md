@@ -79,3 +79,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Reutilizado el marcador y snapshot de evaluación directa para rúbricas y ambos cotejos; total explícito sin selecciones inventadas. Campos principales editables con rango 0–máximo; vacío pendiente y cero real.
 - Confirmación al sustituir criterios, modalidad directa/detallada en el instrumento y conservación al abrir/cerrar. Guardado grupal, borradores, historial, notas, NP y versiones reutilizados sin cambios en ponderaciones o fórmulas.
 - Pruebas focalizadas de modelo y navegador: decimales/rangos, sustitución/cancelación, recuperación de borradores, recarga, historial, observaciones, NP, filtros/grupos y alumnos ajenos intactos.
+
+## Puntos de examen sin incremento accidental (2026-11-03)
+- Campos de captura convertidos a texto con teclado decimal en tabla individual, equipo e instrumentos. Sin flechas, pasos por rueda ni pérdida de foco; Tab y escritura normales.
+- Validación de sintaxis numérica y rangos existentes; vacío pendiente y cero real intactos. No se modifican fórmulas, notas, snapshots ni almacenamiento.
+- Pruebas focalizadas: rueda con foco, flechas/Tab, rango/formato, criterios/directa, cambios de modalidad, borradores, guardado y recarga en escritorio/móvil; NP y captura detallada existentes preservados.
