@@ -84,3 +84,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Campos de captura convertidos a texto con teclado decimal en tabla individual, equipo e instrumentos. Sin flechas, pasos por rueda ni pérdida de foco; Tab y escritura normales.
 - Validación de sintaxis numérica y rangos existentes; vacío pendiente y cero real intactos. No se modifican fórmulas, notas, snapshots ni almacenamiento.
 - Pruebas focalizadas: rueda con foco, flechas/Tab, rango/formato, criterios/directa, cambios de modalidad, borradores, guardado y recarga en escritorio/móvil; NP y captura detallada existentes preservados.
+
+## Redondeo especial en exámenes base 10 (2026-11-03)
+- Base de un decimal antes de aplicar la regla de la materia .9 → entero superior; ajustes posteriores, sin cambiar puntos ni ponderaciones. Auditoría conserva base, redondeada y estado de la regla aplicado para validar registros históricos independientemente de la configuración actual.
+- Las notas guardadas no se recalculan al abrir la captura. Corrección opcional solo de auditorías coherentes, con vista previa, confirmación y control de cambios; se agrega una versión histórica sin reemplazar originales. Pendientes/NP excluidos.
+- Pruebas: 14/72, 28/72, 42/72, 43/72, 8.9/10, ajustes antes/después, regla desactivada, provisionales, corrección histórica y recarga; libro/exportación leen la nota oficial sin volver a redondearla.
