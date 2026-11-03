@@ -89,3 +89,8 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Base de un decimal antes de aplicar la regla de la materia .9 → entero superior; ajustes posteriores, sin cambiar puntos ni ponderaciones. Auditoría conserva base, redondeada y estado de la regla aplicado para validar registros históricos independientemente de la configuración actual.
 - Las notas guardadas no se recalculan al abrir la captura. Corrección opcional solo de auditorías coherentes, con vista previa, confirmación y control de cambios; se agrega una versión histórica sin reemplazar originales. Pendientes/NP excluidos.
 - Pruebas: 14/72, 28/72, 42/72, 43/72, 8.9/10, ajustes antes/después, regla desactivada, provisionales, corrección histórica y recarga; libro/exportación leen la nota oficial sin volver a redondearla.
+
+## Correos: filtro y parciales (2026-11-03)
+- Filtro de importación con resumen por parcial, conservación de posibles entregas incompletas/Canva y exclusión de mensajes ajenos; fechas y asuntos originales conservados. Rangos por semestre/materia/grupo, prioridad de actividad, asignación manual sin validar y grupos plegables.
+- Apps Script proporcionado adaptado y probado sin Gmail real: entrada/no leído por mensaje, salientes y consultas excluidos, auditoría ampliada y cero cambios de lectura. Instalación manual en Google Sheets documentada en ENTREGAS-CORREO-PARCIALES.md.
+- Solo fuentes y datos sintéticos se publican; el CSV real se revisó sin importarlo ni copiarlo al repositorio.
