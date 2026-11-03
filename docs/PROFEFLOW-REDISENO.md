@@ -94,3 +94,9 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Filtro de importación con resumen por parcial, conservación de posibles entregas incompletas/Canva y exclusión de mensajes ajenos; fechas y asuntos originales conservados. Rangos por semestre/materia/grupo, prioridad de actividad, asignación manual sin validar y grupos plegables.
 - Apps Script proporcionado adaptado y probado sin Gmail real: entrada/no leído por mensaje, salientes y consultas excluidos, auditoría ampliada y cero cambios de lectura. Instalación manual en Google Sheets documentada en ENTREGAS-CORREO-PARCIALES.md.
 - Solo fuentes y datos sintéticos se publican; el CSV real se revisó sin importarlo ni copiarlo al repositorio.
+
+## Revisión: ausencias, correo y guardado (2026-11-03)
+- Los ceros de ausencia Moodle son resultados registrados; los correos detectados son metadatos y no reabren la evaluación. Filtros coherentes y avance dentro del filtro después del guardado confirmado; barra móvil con alumno, posición y estado.
+- Firma no aplicable a trabajos sin entregar. Casilla de correo sin efectos académicos hasta confirmar evidencia, fecha y nota; autorización para sustituir evaluaciones protegidas, sin pérdida del cero original.
+- Revisión rápida de ausencias independiente de firmas: selección, vista previa y confirmación, exclusión de correos pendientes/evaluaciones existentes, guardado atómico y sin duplicados. No cambia asistencia ni datos de Gmail.
+- Pruebas aisladas y navegador con alumnos ficticios: conexión fallida/reintento, nota editada por retraso, protección de ceros y notas, recarga, filtros y celular.
