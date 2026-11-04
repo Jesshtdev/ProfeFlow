@@ -100,3 +100,15 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Firma no aplicable a trabajos sin entregar. Casilla de correo sin efectos académicos hasta confirmar evidencia, fecha y nota; autorización para sustituir evaluaciones protegidas, sin pérdida del cero original.
 - Revisión rápida de ausencias independiente de firmas: selección, vista previa y confirmación, exclusión de correos pendientes/evaluaciones existentes, guardado atómico y sin duplicados. No cambia asistencia ni datos de Gmail.
 - Pruebas aisladas y navegador con alumnos ficticios: conexión fallida/reintento, nota editada por retraso, protección de ceros y notas, recarga, filtros y celular.
+
+## Guardado en nube: confirmación y tiempos de espera (2026-11-03)
+- Autenticación 20 s, lectura inicial 45 s, guardado 60 s y comprobaciones ligeras 12 s. Sin límite único global; diagnóstico técnico por operación y fase sin contenido académico.
+- Función aditiva profeflow_save_v2 y last_request_id: respuesta pequeña de revisión/fecha/identificador, misma concurrencia optimista y RLS, profeflow_save anterior intacta. Instalaciones nuevas: schema.sql y después cloud-save-v2.sql; clientes nuevos admiten la función anterior si v2 aún no existe.
+- Ante resultado incierto se verifica el identificador y la revisión antes de reintentar; se conserva exactamente el documento/token original, sin repetir la mutación ni sus historiales. Si la captura cambió, Mi cuenta → Verificar / reintentar guardado pendiente confirma el intento anterior conservando la edición actual. Un conflicto requiere actualizar/conciliar; no se sobrescribe.
+- La comprobación periódica descarga solo revision; descarga el aula únicamente cuando cambia. Estado visible no anuncia éxito tras un fallo. La revisión individual mantiene al alumno y su captura hasta confirmarse el guardado.
+- Pruebas: documento ficticio >4.2 MB, SDK real en navegador con backend simulado (escritorio/celular), timeout antes/después del commit y pérdida de respuesta, reintento del mismo token, cero real, guardados consecutivos y conflicto. SQL de prueba con usuario ficticio y rollback: respuesta compacta, idempotencia, legado, aislamiento RLS y bloqueo anónimo (tests/cloud-save-v2.sql). No se alteraron registros académicos reales.
+
+## Copiar configuración de examen entre parciales (2026-11-04)
+- Acción junto a Configurar evaluación: elige otro parcial de la misma materia/grupo, verifica destino vacío y confirma copia de secciones, máximos e instrumentos; clave privada opcional, sin sobrescribir claves existentes.
+- Solo después de persistir la copia se ofrece eliminar la configuración original, con otra confirmación. Se bloquea si hay notas, ajustes, versiones o aplicaciones; el historial de configuración original se conserva dentro de la copia y la clave original permanece intacta.
+- Pruebas ficticias: instrumentos mixtos, destinos ocupados/claves protegidas, cambios de revisión, guardado fallido/reintento, eliminación opcional y recarga, sin modificar alumnos ni registros académicos.
