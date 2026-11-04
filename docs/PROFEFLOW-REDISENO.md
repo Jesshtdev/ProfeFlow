@@ -112,3 +112,7 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Acción junto a Configurar evaluación: elige otro parcial de la misma materia/grupo, verifica destino vacío y confirma copia de secciones, máximos e instrumentos; clave privada opcional, sin sobrescribir claves existentes.
 - Solo después de persistir la copia se ofrece eliminar la configuración original, con otra confirmación. Se bloquea si hay notas, ajustes, versiones o aplicaciones; el historial de configuración original se conserva dentro de la copia y la clave original permanece intacta.
 - Pruebas ficticias: instrumentos mixtos, destinos ocupados/claves protegidas, cambios de revisión, guardado fallido/reintento, eliminación opcional y recarga, sin modificar alumnos ni registros académicos.
+
+## Panel de observaciones en captura de exámenes (2026-11-04)
+- Se elimina la columna fija y se conservan sus campos en un panel nativo plegable junto al nombre, cerrado al abrir la tabla. Indicadores de observación y ajustes; historial independiente. El cierre no elimina campos ni sus valores.
+- Más anchura para nombre/controles, diseño adaptable. Sin cambios en cálculo, guardado ni datos. Verificado con borradores, puntos, comentarios históricos, ajustes, NP, A/B, instrumentos, filtros y recarga mediante pruebas ficticias en escritorio, pantalla dividida y celular.
