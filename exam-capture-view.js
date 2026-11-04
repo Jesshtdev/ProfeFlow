@@ -104,6 +104,7 @@ function bindExamCaptureDivisionFilter(people,onSave,onDiscard){
   }
   table.querySelectorAll('[data-exam-group-heading]').forEach(heading=>{const key=heading.dataset.examGroupHeading,button=heading.querySelector('button'),closed=state.collapsed.has(collapseKey(key));button.textContent=(closed?'▸ ':'▾ ')+groupName(key)+' · '+counts.get(key)+' alumnos';button.setAttribute('aria-expanded',String(!closed));button.onclick=()=>{const k=collapseKey(key);if(state.collapsed.has(k))state.collapsed.delete(k);else state.collapsed.add(k);apply()}});
   table.querySelectorAll('[data-exam-student-row]').forEach(row=>row.hidden=!ids.has(row.dataset.examStudentRow)||grouped&&state.collapsed.has(collapseKey(groupFor(row.dataset.examStudentRow))));
+  table.querySelectorAll('[data-exam-student-row]').forEach(row=>{const panel=table.querySelector('[data-exam-comments-row="'+row.dataset.examStudentRow+'"]');if(panel){if(row.nextElementSibling!==panel)row.after(panel);panel.hidden=row.hidden||row.querySelector('[data-exam-comments-toggle]')?.getAttribute('aria-expanded')!=='true'}});
   $('physicalGroupActions').hidden=!grouped;
   $('physicalExpandAll').onclick=()=>{for(const key of counts.keys())state.collapsed.delete(collapseKey(key));apply()};
   $('physicalCollapseAll').onclick=()=>{for(const key of counts.keys())state.collapsed.add(collapseKey(key));apply()};
