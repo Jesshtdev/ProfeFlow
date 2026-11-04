@@ -116,3 +116,9 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 ## Panel de observaciones en captura de exámenes (2026-11-04)
 - Se elimina la columna fija y se conservan sus campos en un panel nativo plegable junto al nombre, cerrado al abrir la tabla. Indicadores de observación y ajustes; historial independiente. El cierre no elimina campos ni sus valores.
 - Más anchura para nombre/controles, diseño adaptable. Sin cambios en cálculo, guardado ni datos. Verificado con borradores, puntos, comentarios históricos, ajustes, NP, A/B, instrumentos, filtros y recarga mediante pruebas ficticias en escritorio, pantalla dividida y celular.
+
+## Cuenta y extras de examen (2026-11-04)
+- Mi cuenta usa un manejador sin evento como argumento; sesión persistente y apertura de cuenta existente. Renovación explícita o por expiración conserva DOM/captura, identidad de cuenta y guardados inciertos. No se cambia la base durante la reautenticación.
+- Extra / 10 usa texto decimal y el ajuste existente con origen physical-extra-column e identificador por alumno/parcial/categoría. Motivo obligatorio; vacío conserva, cero retira solo con confirmación. Otros ajustes e historiales se conservan; el guardado del grupo es atómico e idempotente.
+- Proyección inmediata sobre 10 después del redondeo especial, con bonificaciones/penalizaciones y límite 10; pendientes sin nota oficial y NP protegido. Borradores, agrupaciones y filtros conservan los campos.
+- Pruebas ficticias focalizadas: sesión nueva/persistente/renovada, cuenta y verificación pendiente; 7.5+.5=8, 5.9→6+.5=6.5 y 9.7+.5=10; motivo/rangos/retirada/historial, dos dispositivos, fallos de conexión, guardar repetido, filtros y recarga. Navegador 1440/900/390 px, sin acceder a datos reales.
