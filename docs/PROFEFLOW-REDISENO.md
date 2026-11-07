@@ -126,3 +126,7 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 
 ### Ausencias Moodle con evidencia (2026-11-07)
 Importación: Sin entrega + Calificado + 0 explícitos conservan origen y evidencia; un cero aislado no demuestra ausencia. Se retiró la inferencia de ceros durante migración. Revisión muestra la ausencia calificada sin firma/cotejo y conserva los correos pendientes como información separada. Conciliar ausencias Moodle permite comprobar archivo/tabla original o confirmar manualmente con vista previa, protección de evaluaciones y operación atómica. Pruebas ficticias de importación, conciliación, filtros, reimportación, correo posterior, fallo de guardado y recarga en escritorio/móvil; sin datos reales.
+
+
+### Estados del libro general Moodle (2026-11-07)
+Referencia leída sin modificar: P8 del libro CDI-3J, 10 valores 0.0 y 21 guiones. La importación histórica conserva columna exacta y añade confirmación por archivo para ceros de ausencia. Guiones crean pendientes sin nota; la conciliación muestra diferencias, exige decisión sobre evaluaciones importadas y protege revisiones docentes/correos. Se conservan versiones anteriores y metadatos de corrección. Cambio explícito Pendiente → Sin entregar guarda cero sin firma. Fixture con encabezados equivalentes y 31 alumnos ficticios; pruebas de estados, Inicio, filtros, resumen, XLSX, reimportación y recarga en escritorio/móvil. No se modificaron alumnos reales.
