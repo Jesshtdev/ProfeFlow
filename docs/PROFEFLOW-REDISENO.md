@@ -122,3 +122,7 @@ Autorizadas las 5 fases, secuenciales. Rama `development/redesign`; sin push, de
 - Extra / 10 usa texto decimal y el ajuste existente con origen physical-extra-column e identificador por alumno/parcial/categoría. Motivo obligatorio; vacío conserva, cero retira solo con confirmación. Otros ajustes e historiales se conservan; el guardado del grupo es atómico e idempotente.
 - Proyección inmediata sobre 10 después del redondeo especial, con bonificaciones/penalizaciones y límite 10; pendientes sin nota oficial y NP protegido. Borradores, agrupaciones y filtros conservan los campos.
 - Pruebas ficticias focalizadas: sesión nueva/persistente/renovada, cuenta y verificación pendiente; 7.5+.5=8, 5.9→6+.5=6.5 y 9.7+.5=10; motivo/rangos/retirada/historial, dos dispositivos, fallos de conexión, guardar repetido, filtros y recarga. Navegador 1440/900/390 px, sin acceder a datos reales.
+
+
+### Ausencias Moodle con evidencia (2026-11-07)
+Importación: Sin entrega + Calificado + 0 explícitos conservan origen y evidencia; un cero aislado no demuestra ausencia. Se retiró la inferencia de ceros durante migración. Revisión muestra la ausencia calificada sin firma/cotejo y conserva los correos pendientes como información separada. Conciliar ausencias Moodle permite comprobar archivo/tabla original o confirmar manualmente con vista previa, protección de evaluaciones y operación atómica. Pruebas ficticias de importación, conciliación, filtros, reimportación, correo posterior, fallo de guardado y recarga en escritorio/móvil; sin datos reales.
