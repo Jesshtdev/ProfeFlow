@@ -130,3 +130,7 @@ Importación: Sin entrega + Calificado + 0 explícitos conservan origen y eviden
 
 ### Estados del libro general Moodle (2026-11-07)
 Referencia leída sin modificar: P8 del libro CDI-3J, 10 valores 0.0 y 21 guiones. La importación histórica conserva columna exacta y añade confirmación por archivo para ceros de ausencia. Guiones crean pendientes sin nota; la conciliación muestra diferencias, exige decisión sobre evaluaciones importadas y protege revisiones docentes/correos. Se conservan versiones anteriores y metadatos de corrección. Cambio explícito Pendiente → Sin entregar guarda cero sin firma. Fixture con encabezados equivalentes y 31 alumnos ficticios; pruebas de estados, Inicio, filtros, resumen, XLSX, reimportación y recarga en escritorio/móvil. No se modificaron alumnos reales.
+
+
+### Revisión por criterios o nota directa (2026-11-10)
+Se conservan los valores del cotejo y la nota directa al alternar, también en la revisión guardada. Corregir una nota definitiva pide motivo y conserva la revisión anterior. Se evita bloquear una revisión ya completa por su canal de correo; las entregas académicamente pendientes de validación siguen protegidas con explicación visible. La etiqueta distingue vista previa sin guardar y nota persistida. Pruebas ficticias de 10 criterios/80 → nota85, recarga, promedios, cero/decimales/rangos, y persistencia con Supabase simulado.
