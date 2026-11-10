@@ -145,3 +145,6 @@ Anterior/Siguiente conservan capturas por alumno, cuenta, semestre, materia, gru
 
 ### Lista de alumnos: preferencia visual local (2026-11-10)
 Ocultar/Mostrar alumnos alterna hidden y la clase existente sin mutación, guardado ni render. Preferencia por navegador con respaldo inicial del ajuste antiguo; conserva formularios, borradores, filtros, desplazamiento y errores de sincronización. Pruebas ficticias de clics repetidos, almacenamiento restringido y recarga a 1440, 900 y 390 px, más regresión del guardado conjunto.
+
+### Redondeo especial de Actividades en base 10 (2026-11-10)
+El promedio conserva los pesos y la precisión hasta convertir a un decimal en base 10. Con activity activado, .9 sube al entero siguiente; el valor efectivo alimenta parcial y semestre. Sin la opción se mantiene el cálculo normal. Exámenes y registros individuales intactos. Pruebas de casos solicitados, límite 10, precisión 98.499, ponderaciones, pendientes, exportación y escritorio/móvil con datos ficticios.
