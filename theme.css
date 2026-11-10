@@ -303,3 +303,7 @@ dialog.exam-instrument-modal{width:min(1240px,96vw);max-width:96vw}
 
 /* Direct grading stays beside checklist tools without hiding the instrument. */
 .review-direct-inline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}.review-direct-inline label{font-size:12px;margin:0}.review-direct-inline input{width:90px;min-width:72px;margin:0}.review-direct-inline>span{font-size:11px;color:var(--pf-muted);min-width:52px}@media(max-width:750px){.review-direct-inline{margin-left:0;flex:1 1 100%}.review-direct-inline input{min-height:44px}}
+
+.review-local-badge{display:inline-block;font-size:10px;color:#865b13;background:#fff5dc;border-radius:5px;padding:2px 5px;margin-top:3px}#reviewDraftList{font-size:11px;padding:4px 6px;min-height:30px}.review-save-bar .review-save-context{min-width:0}
+
+.review-card-topline{flex-wrap:wrap}.review-card-topline #studentHistory{font-size:11px;min-height:32px;padding:5px 8px}@media(max-width:750px){.review-card-topline #studentHistory{min-height:44px}}

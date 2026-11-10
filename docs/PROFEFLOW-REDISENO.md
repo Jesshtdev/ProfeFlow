@@ -138,3 +138,7 @@ Se conservan los valores del cotejo y la nota directa al alternar, también en l
 
 ### Nota directa junto al cotejo (2026-11-10)
 Se elimina el botón de alternancia. El campo directo permanece visible; vacío usa criterios y 0 es una nota explícita. Criterios y Todo cumple no borran la nota manual. Se conservan motivo, historial, firma, ausencia y validación de correo. Pruebas ficticias de edición simultánea, vaciado, decimales, persistencia y escritorio/móvil.
+
+
+### Captura local y guardado conjunto de Revisión (2026-11-10)
+Anterior/Siguiente conservan capturas por alumno, cuenta, semestre, materia, grupo y actividad en almacenamiento local. No escriben datos académicos ni llaman a Supabase. El lote valida mediante la misma función de revisión, presenta resultados y errores por alumno, y aplica las filas válidas en una sola mutación. Los borradores inválidos permanecen. Tokens de captura permiten confirmar un envío incierto sin duplicar versiones; las huellas de los registros evitan reemplazar cambios externos. La sesión protege borradores por cuenta y pide confirmación antes de descartarlos al salir. Se conserva el contexto móvil y la consulta de borradores. Pruebas ficticias de 31 alumnos, recarga, una escritura, firma/nota directa, fallos antes y después del commit, conflicto y privacidad. Sin cambios en Supabase de producción.
