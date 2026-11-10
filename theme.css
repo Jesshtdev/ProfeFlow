@@ -299,7 +299,7 @@ dialog.exam-instrument-modal{width:min(1240px,96vw);max-width:96vw}
 .home-completed{margin-top:12px;border-top:1px solid var(--pf-line);padding-top:10px}.home-completed>summary{font-size:13px;color:#245c9c;cursor:pointer;padding:6px 0}.home-exam-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.home-exam-heading h2{margin:0}.home-exam-heading label{font-size:12px;min-width:170px}.home-work-table td{padding:10px 12px;font-size:13px;vertical-align:middle}.home-work-table small{display:block;font-size:11px;color:var(--pf-muted);margin-top:3px}.home-work-table button{font-size:12px;padding:7px 10px;white-space:nowrap}@media(max-width:750px){.home-exam-heading{align-items:stretch;flex-direction:column}.home-exam-heading label{width:100%}.home-work-table button{min-height:44px}}
 
 /* Display-only activity category average; the book remains horizontally scrollable. */
-.gradebook .activity-average{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:80px;line-height:1.4}.gradebook .activity-average strong{font-size:15px;color:var(--pf-ink);white-space:nowrap}.gradebook .activity-average small{font-size:11px;color:var(--pf-muted);white-space:nowrap}.gradebook .activity-average .activity-average-pending{color:#886018;font-size:10px}
+.gradebook :is(.activity-average,.grade-summary){display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:80px;line-height:1.4}.gradebook :is(.activity-average,.grade-summary) strong{font-size:15px;color:var(--pf-ink);white-space:nowrap}.gradebook :is(.activity-average,.grade-summary) small{font-size:11px;color:var(--pf-muted);white-space:nowrap}.gradebook :is(.activity-average-pending,.grade-summary-pending){color:#886018;font-size:10px}
 
 /* Direct grading stays beside checklist tools without hiding the instrument. */
 .review-direct-inline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}.review-direct-inline label{font-size:12px;margin:0}.review-direct-inline input{width:90px;min-width:72px;margin:0}.review-direct-inline>span{font-size:11px;color:var(--pf-muted);min-width:52px}@media(max-width:750px){.review-direct-inline{margin-left:0;flex:1 1 100%}.review-direct-inline input{min-height:44px}}
@@ -307,3 +307,5 @@ dialog.exam-instrument-modal{width:min(1240px,96vw);max-width:96vw}
 .review-local-badge{display:inline-block;font-size:10px;color:#865b13;background:#fff5dc;border-radius:5px;padding:2px 5px;margin-top:3px}#reviewDraftList{font-size:11px;padding:4px 6px;min-height:30px}.review-save-bar .review-save-context{min-width:0}
 
 .review-card-topline{flex-wrap:wrap}.review-card-topline #studentHistory{font-size:11px;min-height:32px;padding:5px 8px}@media(max-width:750px){.review-card-topline #studentHistory{min-height:44px}}
+
+.gradebook .grade-summary{min-width:0}.gradebook .grade-summary-action{display:inline-flex;align-items:center;gap:4px;padding:4px 6px;min-width:0}

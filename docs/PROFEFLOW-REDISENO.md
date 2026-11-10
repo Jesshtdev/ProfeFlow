@@ -148,3 +148,6 @@ Ocultar/Mostrar alumnos alterna hidden y la clase existente sin mutación, guard
 
 ### Redondeo especial de Actividades en base 10 (2026-11-10)
 El promedio conserva los pesos y la precisión hasta convertir a un decimal en base 10. Con activity activado, .9 sube al entero siguiente; el valor efectivo alimenta parcial y semestre. Sin la opción se mantiene el cálculo normal. Exámenes y registros individuales intactos. Pruebas de casos solicitados, límite 10, precisión 98.499, ponderaciones, pendientes, exportación y escritorio/móvil con datos ficticios.
+
+### Concentrado: presentación uniforme en base 10 (2026-11-10)
+Actividades, Examen, Parcial y Semestre reutilizan un formato compacto: base 10 con un decimal y equivalente base 100 debajo. Parciales incompletos y acumulados semestrales se identifican como provisionales; pendientes no se presentan como definitivos. Se conserva NP y el acceso al examen. Pruebas ficticias de ejemplos, ausencia de mutaciones y doble redondeo, pendientes, acumulación y escritorio/móvil. Sin cambios en model.js ni exportadores.
