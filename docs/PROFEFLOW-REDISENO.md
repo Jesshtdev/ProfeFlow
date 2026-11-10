@@ -134,3 +134,7 @@ Referencia leída sin modificar: P8 del libro CDI-3J, 10 valores 0.0 y 21 guione
 
 ### Revisión por criterios o nota directa (2026-11-10)
 Se conservan los valores del cotejo y la nota directa al alternar, también en la revisión guardada. Corregir una nota definitiva pide motivo y conserva la revisión anterior. Se evita bloquear una revisión ya completa por su canal de correo; las entregas académicamente pendientes de validación siguen protegidas con explicación visible. La etiqueta distingue vista previa sin guardar y nota persistida. Pruebas ficticias de 10 criterios/80 → nota85, recarga, promedios, cero/decimales/rangos, y persistencia con Supabase simulado.
+
+
+### Nota directa junto al cotejo (2026-11-10)
+Se elimina el botón de alternancia. El campo directo permanece visible; vacío usa criterios y 0 es una nota explícita. Criterios y Todo cumple no borran la nota manual. Se conservan motivo, historial, firma, ausencia y validación de correo. Pruebas ficticias de edición simultánea, vaciado, decimales, persistencia y escritorio/móvil.

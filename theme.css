@@ -300,3 +300,6 @@ dialog.exam-instrument-modal{width:min(1240px,96vw);max-width:96vw}
 
 /* Display-only activity category average; the book remains horizontally scrollable. */
 .gradebook .activity-average{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:80px;line-height:1.4}.gradebook .activity-average strong{font-size:15px;color:var(--pf-ink);white-space:nowrap}.gradebook .activity-average small{font-size:11px;color:var(--pf-muted);white-space:nowrap}.gradebook .activity-average .activity-average-pending{color:#886018;font-size:10px}
+
+/* Direct grading stays beside checklist tools without hiding the instrument. */
+.review-direct-inline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}.review-direct-inline label{font-size:12px;margin:0}.review-direct-inline input{width:90px;min-width:72px;margin:0}.review-direct-inline>span{font-size:11px;color:var(--pf-muted);min-width:52px}@media(max-width:750px){.review-direct-inline{margin-left:0;flex:1 1 100%}.review-direct-inline input{min-height:44px}}
