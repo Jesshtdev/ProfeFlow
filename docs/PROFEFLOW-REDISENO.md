@@ -151,3 +151,6 @@ El promedio conserva los pesos y la precisión hasta convertir a un decimal en b
 
 ### Concentrado: presentación uniforme en base 10 (2026-11-10)
 Actividades, Examen, Parcial y Semestre reutilizan un formato compacto: base 10 con un decimal y equivalente base 100 debajo. Parciales incompletos y acumulados semestrales se identifican como provisionales; pendientes no se presentan como definitivos. Se conserva NP y el acceso al examen. Pruebas ficticias de ejemplos, ausencia de mutaciones y doble redondeo, pendientes, acumulación y escritorio/móvil. Sin cambios en model.js ni exportadores.
+
+### Importación histórica: resolución en lote (2026-11-10)
+Una entrega sin revisión numérica no es una nota previa: las notas nuevas se proponen automáticamente y las existentes se conservan. La vista clasifica nuevas, coincidencias, diferencias y protegidas, permite seleccionar filas y aplicar tres acciones masivas, y muestra el resumen antes de la única confirmación final. Evaluaciones protegidas requieren autorización individual; se conserva cada versión anterior. Pruebas con 240 entregas sin nota, discrepancias, firmas/correos protegidos, reimportación, una escritura, estados Moodle y XLSX ficticio en escritorio/móvil.
