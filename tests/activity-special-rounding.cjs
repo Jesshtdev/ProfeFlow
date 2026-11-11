@@ -2,21 +2,21 @@ const {run,assert,$,document}=require('./helper.cjs');
 (async()=>{
  await run('boot()');run(`var e=ev(),a=db.activities[0],ac=a.categoryId,ex=e.categories.find(c=>c.kind==='exam').id;e.specialRounding={activity:true,exam:false};var cases=[[69.4,70],[59.4,60],[85.3,85],[41.6,42],[98.5,100],[0,0]];for(const [i,pair]of cases.entries()){Aula.saveReview(db,a,db.students[i],{},'Nota original conservada',{status:'reviewed'},pair[0]);db.exams.push({id:'round-ex'+i,studentId:db.students[i].id,periodId:period,categoryId:ex,score:80,notes:'Examen intacto',date:new Date().toISOString()})}ix=Aula.index(db);var originals=JSON.stringify({reviews:db.reviews,submissions:db.submissions,exams:db.exams})`);
  for(const maxScale of [100,10]){
-  run(`e.maxScale=${maxScale};e.specialRounding.activity=true`);
+  run(`e.maxScale=${maxScale};db.settings.specialRoundingEnabled=true`);
   for(const [i,input,expected]of [[0,69.4,70],[1,59.4,60],[2,85.3,85],[3,41.6,42],[4,98.5,100],[5,0,0]]){
    assert.equal(run(`Aula.evaluationRounding(${input},e,'activity')`),expected);
    assert.equal(run(`Aula.summary(db,'u${i}',period).values[ac]`),expected);
    assert.equal(run(`Aula.summary(db,'u${i}',period).score`),Math.round((expected*.7+24)*100)/100);
   }
   assert.equal(run(`Aula.evaluationRounding(null,e,'activity')`),null);assert.equal(run(`Aula.evaluationRounding(100,e,'activity')`),100);
-  run(`e.specialRounding.activity=false`);for(const [i,input]of [[0,69.4],[1,59.4],[2,85.3],[3,41.6],[4,98.5]])assert.equal(run(`Aula.summary(db,'u${i}',period).values[ac]`),input);
+  run(`db.settings.specialRoundingEnabled=false`);for(const [i,input]of [[0,69.4],[1,59.4],[2,85.3],[3,41.6],[4,98.5]])assert.equal(run(`Aula.summary(db,'u${i}',period).values[ac]`),input);
   assert.equal(run(`Aula.summary(db,'u0',period).score`),72.58);
  }
  assert.equal(run('JSON.stringify({reviews:db.reviews,submissions:db.submissions,exams:db.exams})'),run('originals'));
  // Display, partial and semester all consume the effective category value, without any data writes.
- run(`e.maxScale=100;e.specialRounding.activity=true;var beforeDisplay=JSON.stringify(db);navigate('grades')`);assert.deepEqual(document.querySelectorAll('.activity-average').map(x=>x.querySelector('strong').textContent),['7.0 / 10','6.0 / 10','8.5 / 10','4.2 / 10','10.0 / 10','0.0 / 10']);assert($('bookTable').textContent.includes('70 %'));assert.equal(run(`Aula.semesterSummary(db,'u0').final`),73);assert.equal(run('JSON.stringify(db)'),run('beforeDisplay'));
- // Independent flags: activity correction must never round a stored exam again.
- run(`db.exams[0].score=59;e.specialRounding.exam=true;e.specialRounding.activity=false`);assert.equal(run(`Aula.summary(db,'u0',period).values[ac]`),69.4);assert.equal(run(`Aula.summary(db,'u0',period).values[ex]`),59);run(`e.specialRounding.exam=false;e.specialRounding.activity=true`);assert.equal(run(`Aula.summary(db,'u0',period).values[ac]`),70);assert.equal(run(`Aula.summary(db,'u0',period).values[ex]`),59);
+ run(`e.maxScale=100;db.settings.specialRoundingEnabled=true;var beforeDisplay=JSON.stringify(db);navigate('grades')`);assert.deepEqual(document.querySelectorAll('.activity-average').map(x=>x.querySelector('strong').textContent),['7.0 / 10','6.0 / 10','8.5 / 10','4.2 / 10','10.0 / 10','0.0 / 10']);assert($('bookTable').textContent.includes('70 %'));assert.equal(run(`Aula.semesterSummary(db,'u0').final`),73);assert.equal(run('JSON.stringify(db)'),run('beforeDisplay'));
+ // The global activity policy must never re-round an official saved exam.
+ run(`db.exams[0].score=59;e.specialRounding.exam=true;db.settings.specialRoundingEnabled=false`);assert.equal(run(`Aula.summary(db,'u0',period).values[ac]`),69.4);assert.equal(run(`Aula.summary(db,'u0',period).values[ex]`),59);run(`e.specialRounding.exam=false;db.settings.specialRoundingEnabled=true`);assert.equal(run(`Aula.summary(db,'u0',period).values[ac]`),70);assert.equal(run(`Aula.summary(db,'u0',period).values[ex]`),59);
  // Original activity weights, not an unweighted mean. No premature rounding at a .85 boundary.
  run(`var weighted=Aula.clone(db);weighted.activities=[{...Aula.clone(a),id:'w1',weight:7},{...Aula.clone(a),id:'w2',weight:3}];weighted.reviews=[];weighted.submissions=[];Aula.saveReview(weighted,weighted.activities[0],weighted.students[0],{},'',{status:'reviewed'},91);Aula.saveReview(weighted,weighted.activities[1],weighted.students[0],{},'',{status:'reviewed'},72)`);assert.equal(run(`Aula.summary(weighted,'u0',period).values[ac]`),85);run(`weighted.activities[0].weight=1;weighted.activities[1].weight=9;weighted.reviews=[];Aula.saveReview(weighted,weighted.activities[0],weighted.students[0],{},'',{status:'reviewed'},98.49);Aula.saveReview(weighted,weighted.activities[1],weighted.students[0],{},'',{status:'reviewed'},98.5)`);assert.equal(run(`Aula.summary(weighted,'u0',period).values[ac]`),98,'98.499 must become 9.8, not be prematurely rounded to 98.5');
  // Pending categories stay provisional; no artificial definitive grade, configurable percentages.
